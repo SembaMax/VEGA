@@ -12,9 +12,16 @@ namespace VEFA.Mapping
     {
         public MappingProfile()
         {
+            // Domain To Resource
             CreateMap<Make, MakeResource>();
             CreateMap<Model, ModelResource>();
             CreateMap<Feature,FeatureResource>();
+
+            // Resource To Domain
+            CreateMap<VehicleResource, Vehicle>().ForMember(v => v.Contact.ContactName, opt => opt.MapFrom(vr => vr.Contact.Name))
+            .ForMember(v => v.Contact.ContactPhone, opt => opt.MapFrom(vr => vr.Contact.Phone))
+            .ForMember(v => v.Contact.ContactEmail, opt => opt.MapFrom(vr => vr.Contact.Email))
+            .ForMember(v => v.Features, opt => opt.MapFrom(vr => vr.Features.Select(id => new VehicleFeature { FeatureId = id })));
         }
 
     }
