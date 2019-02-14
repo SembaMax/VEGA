@@ -20,13 +20,13 @@ namespace VEFA.Models.Resources
     {
         [Required]
         [StringLength(255)]
-        public string Name { get; set; }
+        public string ContactName { get; set; }
 
         [StringLength(255)]
-        public string Phone { get; set; }
+        public string ContactPhone { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string Email { get; set; }
+        public string ContactEmail { get; set; }
     } 
 }
