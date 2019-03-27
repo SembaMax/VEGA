@@ -6,8 +6,8 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using VEFA.Models;
-using VEFA.Models.Resources;
+using VEFA.Core.Models;
+using VEFA.REST.Resources;
 using VEFA.Persistance;
 
 namespace VEFA.Controllers
